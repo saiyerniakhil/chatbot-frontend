@@ -12,6 +12,7 @@ run javascript function -
     showBotMessage("Message",getCurrentTimestamp());
 
 ## Screenshot
-![enter image description here](./static/img/demo.png)
+![enter image description here](static/img/chat_sample.png)
 
-PR's are welcome :)
+[Credits to the original author](https://github.com/PandaWhoCodes/chatbot-frontend)
+
