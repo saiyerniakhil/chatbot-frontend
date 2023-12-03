@@ -23,8 +23,11 @@ function renderMessageToScreen(args) {
 	let message = $(`
 	<li class="message ${args.message_side}">
 		<div class="avatar"></div>
-		<div class="text_wrapper">
-			<div class="text">${args.text}</div>
+		<div class="text_wrapper" style="max-width:600px">
+			<div class="text">
+				${args.text}
+			</pre>
+			</div>
 			<div class="timestamp">${displayDate}</div>
 		</div>
 	</li>
@@ -81,13 +84,30 @@ function showBotMessage(message, datetime) {
  */
 $('#send_button').on('click', function (e) {
 	// get and show message and reset input
+	const userQuestion = $('#msg_input').val()
+	console.log(userQuestion)
 	showUserMessage($('#msg_input').val());
 	$('#msg_input').val('');
 
-	// show bot message
-	setTimeout(function () {
-		showBotMessage(randomstring());
-	}, 300);
+	//perform API Call
+	var settings = {
+		"url": "http://127.0.0.1:5000/chatservice",
+		"method": "POST",
+		"timeout": 0,
+		"headers": {
+		  "Content-Type": "application/json"
+		},
+		"data": JSON.stringify({
+		  "question": userQuestion
+		}),
+	  };
+	  
+	  const res = $.ajax(settings).done(function (response) {
+		console.log(response);
+		showBotMessage("<pre style='font-family: system-ui;white-space: pre-line;word-break: break-word;'>" + response.response.answer + "</pre>");
+		return response
+	  });
+	
 });
 
 /**
