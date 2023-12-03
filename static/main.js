@@ -112,5 +112,5 @@ function randomstring(length = 20) {
  * Set initial bot message to the screen for the user.
  */
 $(window).on('load', function () {
-	showBotMessage('Hello there! Type in a message.');
+	showBotMessage('Welcome to Rockwell Automation Machinery. Type your query here');
 });
