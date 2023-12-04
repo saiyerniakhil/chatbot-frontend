@@ -1,15 +1,14 @@
 # Chatbot Frontend
 A simple chatbot frontend for plugging in my bots.
 
-To add a user message to the chat window
-run javascript function -
+# How to run
+1. Prerequisites: 
+    * Visual Studio Code 
+    * [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+2. Clone this project
+3. Open this folder in vscode and run bot.html using Live Server extension.
 
-    showUserMessage("Message",getCurrentTimestamp());
 
-To add a bot message to the chat window
-run javascript function -
-
-    showBotMessage("Message",getCurrentTimestamp());
 
 ## Screenshot
 ![enter image description here](static/img/chat_sample.png)
